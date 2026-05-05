@@ -1,269 +1,290 @@
-import React from 'react';
-import { 
-  Smartphone, 
-  MousePointerClick, 
-  Heart, 
-  BarChart3, 
-  ShieldAlert, 
-  ArrowRight,
-  Menu,
-  CheckCircle2,
-  Zap
-} from 'lucide-react';
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポケオダ - モバイルオーダーシステム</title>
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-emerald-200 selection:text-emerald-900">
 
-const App = () => {
-  return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 selection:bg-emerald-200 selection:text-emerald-900">
-      
-      {/* ナビゲーションバー */}
-      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold">
-                <Zap size={20} />
-              </div>
-              <span className="font-bold text-xl tracking-tight text-emerald-950">ポケオダ</span>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features-student" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">学生のみなさまへ</a>
-              <a href="#features-store" className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">店舗の方へ</a>
-              {/* 補色（ローズレッド）を使用したCTAボタン */}
-              <button className="bg-rose-500 hover:bg-rose-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
-                無料で試してみる
-              </button>
-            </div>
-            <div className="md:hidden flex items-center">
-              <button className="text-slate-500 hover:text-slate-700">
-                <Menu size={24} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* ヒーローセクション */}
-      <section className="relative overflow-hidden bg-white">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-        {/* エメラルドグリーンの装飾 */}
-        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-emerald-100 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-rose-100 rounded-full blur-3xl opacity-50"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative z-10">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
-            
-            <div className="lg:col-span-6 text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
-                学食も、購買も、放課後のカフェも。
-              </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
-                <span className="block text-emerald-500 mb-2">目に入った瞬間、</span>
-                <span className="block">使える。</span>
-              </h1>
-              <p className="mt-4 text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
-                高校生の毎日に寄り添う、圧倒的に使いやすくて効率的なモバイルオーダーシステム。
-                並ぶ時間をゼロにして、友達との時間をもっと増やそう。
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:shadow-emerald-500/30 flex items-center justify-center gap-2">
-                  今すぐはじめる
-                  <ArrowRight size={20} />
-                </button>
-                <button className="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-3.5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
-                  お店への導入はこちら
-                </button>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6 mt-16 lg:mt-0 relative">
-              {/* モックアップ風の画像エリア */}
-              <div className="relative mx-auto w-full max-w-md aspect-[4/3] sm:aspect-square bg-gradient-to-tr from-emerald-400 to-emerald-200 rounded-3xl shadow-2xl overflow-hidden p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
-                <div className="relative h-full bg-white rounded-2xl shadow-inner p-4 flex flex-col">
-                  <div className="flex justify-between items-center mb-6 border-b pb-4">
-                    <span className="font-bold text-emerald-600">今日のメニュー</span>
-                    <span className="bg-rose-100 text-rose-600 text-xs px-2 py-1 rounded-full font-bold">残りわずか</span>
-                  </div>
-                  <div className="space-y-4 flex-1">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
-                        <div className="w-16 h-16 bg-slate-200 rounded-lg"></div>
-                        <div className="flex-1">
-                          <div className="h-4 w-24 bg-slate-300 rounded mb-2"></div>
-                          <div className="h-3 w-16 bg-emerald-200 rounded"></div>
-                        </div>
-                        <div className="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-400">
-                          <Heart size={16} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+    <!-- ナビゲーションバー -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-emerald-950">ポケオダ</span>
                 </div>
-              </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features-student" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">学生のみなさまへ</a>
+                    <a href="#features-store" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">店舗の方へ</a>
+                    <!-- 補色（ローズレッド）を使用したCTAボタン -->
+                    <button class="bg-rose-500 hover:bg-rose-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        無料で試してみる
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-500 hover:text-slate-700">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
-
-          </div>
         </div>
-      </section>
+    </nav>
 
-      {/* ユーザー側のメリット */}
-      <section id="features-student" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-emerald-500 font-bold tracking-wide uppercase text-sm mb-3">For Students</h2>
-            <p className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-              毎日使うからこそ、ストレスフリーに。
-            </p>
-          </div>
+    <!-- ヒーローセクション -->
+    <section class="relative overflow-hidden bg-white">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+        <!-- エメラルドグリーンの装飾 -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-emerald-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-rose-100 rounded-full blur-3xl opacity-50"></div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* ポイント1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
-              <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
-                <Smartphone size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">シンプルで使いやすい</h3>
-              <p className="text-slate-600 leading-relaxed">
-                マニュアル不要。画面を開いた瞬間から直感的に操作できる洗練されたデザインで、忙しい休み時間でもサクッと注文が完了します。
-              </p>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative z-10">
+            <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
+                
+                <div class="lg:col-span-6 text-center lg:text-left">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-semibold text-sm mb-6 border border-emerald-200">
+                        学食も、購買も、放課後のカフェも。
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight mb-6">
+                        <span class="block text-emerald-500 mb-2">目に入った瞬間、</span>
+                        <span class="block">使える。</span>
+                    </h1>
+                    <p class="mt-4 text-lg sm:text-xl text-slate-600 mb-8 leading-relaxed">
+                        高校生の毎日に寄り添う、圧倒的に使いやすくて効率的なモバイルオーダーシステム。
+                        並ぶ時間をゼロにして、友達との時間をもっと増やそう。
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:shadow-emerald-500/30 flex items-center justify-center gap-2">
+                            今すぐはじめる
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </button>
+                        <button class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-3.5 rounded-full font-bold text-lg transition-all flex items-center justify-center">
+                            お店への導入はこちら
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 mt-16 lg:mt-0 relative">
+                    <!-- モックアップ風の画像エリア -->
+                    <div class="relative mx-auto w-full max-w-md aspect-[4/3] sm:aspect-square bg-gradient-to-tr from-emerald-400 to-emerald-200 rounded-3xl shadow-2xl overflow-hidden p-6 transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
+                        <div class="relative h-full bg-white rounded-2xl shadow-inner p-4 flex flex-col">
+                            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                                <span class="font-bold text-emerald-600">今日のメニュー</span>
+                                <span class="bg-rose-100 text-rose-600 text-xs px-2 py-1 rounded-full font-bold">残りわずか</span>
+                            </div>
+                            <div class="space-y-4 flex-1">
+                                <!-- モックアップアイテム 1 -->
+                                <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                    <div class="w-16 h-16 bg-slate-200 rounded-lg"></div>
+                                    <div class="flex-1">
+                                        <div class="h-4 w-24 bg-slate-300 rounded mb-2"></div>
+                                        <div class="h-3 w-16 bg-emerald-200 rounded"></div>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-400">
+                                        <i data-lucide="heart" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                                <!-- モックアップアイテム 2 -->
+                                <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                    <div class="w-16 h-16 bg-slate-200 rounded-lg"></div>
+                                    <div class="flex-1">
+                                        <div class="h-4 w-24 bg-slate-300 rounded mb-2"></div>
+                                        <div class="h-3 w-16 bg-emerald-200 rounded"></div>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-400">
+                                        <i data-lucide="heart" class="w-4 h-4 fill-rose-400"></i>
+                                    </div>
+                                </div>
+                                <!-- モックアップアイテム 3 -->
+                                <div class="flex items-center gap-4 bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                    <div class="w-16 h-16 bg-slate-200 rounded-lg"></div>
+                                    <div class="flex-1">
+                                        <div class="h-4 w-24 bg-slate-300 rounded mb-2"></div>
+                                        <div class="h-3 w-16 bg-emerald-200 rounded"></div>
+                                    </div>
+                                    <div class="w-8 h-8 rounded-full bg-rose-50 flex items-center justify-center text-rose-400">
+                                        <i data-lucide="heart" class="w-4 h-4"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-
-            {/* ポイント2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
-              <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
-                <MousePointerClick size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">ワンクリックログイン</h3>
-              <p className="text-slate-600 leading-relaxed">
-                面倒なパスワード入力や毎回のログイン手続きは一切なし。普段使っているSNSアカウントなどから一瞬でログインできます。
-              </p>
-            </div>
-
-            {/* ポイント3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group border-t-4 border-t-rose-400">
-              <div className="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center text-rose-500 mb-6 group-hover:scale-110 transition-transform">
-                <Heart size={28} className="fill-rose-500" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">「いつもの」を保存</h3>
-              <p className="text-slate-600 leading-relaxed">
-                お気に入りのメニューはハートをタップしてリストに追加。毎日のルーティーン注文が、たった数秒で終わるようになります。
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      {/* 店舗側のメリット（エメラルドグリーン背景でコントラストをつける） */}
-      <section id="features-store" className="py-24 bg-emerald-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-          <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-emerald-300 font-bold tracking-wide uppercase text-sm mb-3">For Stores</h2>
-            <p className="mt-2 text-3xl font-extrabold sm:text-4xl text-white">
-              お店の運営を、もっとスマートに。
-            </p>
-            <p className="mt-4 text-emerald-100 text-lg">
-              高校生が使いやすいだけではありません。提供する側の手間を徹底的に省く機能が詰まっています。
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            
-            <div className="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
-              <div className="w-16 h-16 shrink-0 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                <BarChart3 size={32} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3 text-white">売上の自動集計</h3>
-                <p className="text-emerald-100 leading-relaxed">
-                  面倒な日々の売上計算は不要。リアルタイムでデータがまとまり、どのメニューが人気か一目でわかるダッシュボードをご用意しています。
+    <!-- ユーザー側のメリット -->
+    <section id="features-student" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-500 font-bold tracking-wide uppercase text-sm mb-3">For Students</h2>
+                <p class="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
+                    毎日使うからこそ、ストレスフリーに。
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center gap-2 text-emerald-200 text-sm">
-                    <CheckCircle2 size={16} className="text-emerald-400" /> 時間帯別の売上分析
-                  </li>
-                  <li className="flex items-center gap-2 text-emerald-200 text-sm">
-                    <CheckCircle2 size={16} className="text-emerald-400" /> 商品別の人気ランキング
-                  </li>
-                </ul>
-              </div>
             </div>
 
-            <div className="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
-              <div className="w-16 h-16 shrink-0 bg-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
-                <ShieldAlert size={32} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3 text-white">在庫＆アレルギー管理</h3>
-                <p className="text-emerald-100 leading-relaxed">
-                  売り切れの表示はワンタップで即時反映。アレルギー情報も生徒のスマホに分かりやすく表示できるため、安心・安全な提供が可能です。
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- ポイント1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="smartphone" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">シンプルで使いやすい</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        マニュアル不要。画面を開いた瞬間から直感的に操作できる洗練されたデザインで、忙しい休み時間でもサクッと注文が完了します。
+                    </p>
+                </div>
+
+                <!-- ポイント2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group">
+                    <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="mouse-pointer-click" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">ワンクリックログイン</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        面倒なパスワード入力や毎回のログイン手続きは一切なし。普段使っているSNSアカウントなどから一瞬でログインできます。
+                    </p>
+                </div>
+
+                <!-- ポイント3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-md transition-shadow group border-t-4 border-t-rose-400">
+                    <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center text-rose-500 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="heart" class="w-7 h-7 fill-rose-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">「いつもの」を保存</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        お気に入りのメニューはハートをタップしてリストに追加。毎日のルーティーン注文が、たった数秒で終わるようになります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 店舗側のメリット -->
+    <section id="features-store" class="py-24 bg-emerald-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
+            <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-emerald-300 font-bold tracking-wide uppercase text-sm mb-3">For Stores</h2>
+                <p class="mt-2 text-3xl font-extrabold sm:text-4xl text-white">
+                    お店の運営を、もっとスマートに。
                 </p>
-                <ul className="mt-4 space-y-2">
-                  <li className="flex items-center gap-2 text-emerald-200 text-sm">
-                    <CheckCircle2 size={16} className="text-rose-400" /> 在庫連動による売り越し防止
-                  </li>
-                  <li className="flex items-center gap-2 text-emerald-200 text-sm">
-                    <CheckCircle2 size={16} className="text-rose-400" /> 7大アレルゲンのアイコン表示
-                  </li>
-                </ul>
-              </div>
+                <p class="mt-4 text-emerald-100 text-lg">
+                    高校生が使いやすいだけではありません。提供する側の手間を徹底的に省く機能が詰まっています。
+                </p>
             </div>
 
-          </div>
+            <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                
+                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
+                    <div class="w-16 h-16 shrink-0 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                        <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">売上の自動集計</h3>
+                        <p class="text-emerald-100 leading-relaxed">
+                            面倒な日々の売上計算は不要。リアルタイムでデータがまとまり、どのメニューが人気か一目でわかるダッシュボードをご用意しています。
+                        </p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center gap-2 text-emerald-200 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> 時間帯別の売上分析
+                            </li>
+                            <li class="flex items-center gap-2 text-emerald-200 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> 商品別の人気ランキング
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
+                    <div class="w-16 h-16 shrink-0 bg-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                        <i data-lucide="shield-alert" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-3 text-white">在庫＆アレルギー管理</h3>
+                        <p class="text-emerald-100 leading-relaxed">
+                            売り切れの表示はワンタップで即時反映。アレルギー情報も生徒のスマホに分かりやすく表示できるため、安心・安全な提供が可能です。
+                        </p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center gap-2 text-emerald-200 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> 在庫連動による売り越し防止
+                            </li>
+                            <li class="flex items-center gap-2 text-emerald-200 text-sm">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-rose-400"></i> 7大アレルゲンのアイコン表示
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </section>
+    </section>
 
-      {/* CTA セクション */}
-      <section className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-emerald-50 rounded-3xl p-12 md:p-20 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-rose-200 rounded-full blur-3xl opacity-50"></div>
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">
-              さあ、新しいオーダー体験を始めよう。
-            </h2>
-            <p className="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
-              生徒も店舗も嬉しいモバイルオーダー。初期設定はたったの5分で完了します。まずは無料で使い勝手を体験してください。
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-lg shadow-rose-500/30">
-                無料でアカウント作成
-              </button>
-              <button className="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-8 py-4 rounded-full font-bold text-lg transition-colors">
-                資料をダウンロード
-              </button>
+    <!-- CTA セクション -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-emerald-50 rounded-3xl p-12 md:p-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-rose-200 rounded-full blur-3xl opacity-50"></div>
+            <div class="relative z-10">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6">
+                    さあ、新しいオーダー体験を始めよう。
+                </h2>
+                <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto">
+                    生徒も店舗も嬉しいモバイルオーダー。初期設定はたったの5分で完了します。まずは無料で使い勝手を体験してください。
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-rose-500 hover:bg-rose-600 text-white px-8 py-4 rounded-full font-bold text-lg transition-transform hover:scale-105 shadow-lg shadow-rose-500/30">
+                        無料でアカウント作成
+                    </button>
+                    <button class="bg-emerald-100 hover:bg-emerald-200 text-emerald-800 px-8 py-4 rounded-full font-bold text-lg transition-colors">
+                        資料をダウンロード
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      {/* フッター */}
-      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-emerald-500 rounded flex items-center justify-center text-white">
-                <Zap size={14} />
-              </div>
-              <span className="font-bold text-lg text-white tracking-tight">ポケオダ</span>
+    <!-- フッター -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 bg-emerald-500 rounded flex items-center justify-center text-white">
+                        <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                    </div>
+                    <span class="font-bold text-lg text-white tracking-tight">ポケオダ</span>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-emerald-400 transition-colors">利用規約</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">プライバシーポリシー</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">運営会社</a>
+                    <a href="#" class="hover:text-emerald-400 transition-colors">お問い合わせ</a>
+                </div>
             </div>
-            <div className="flex gap-6 text-sm">
-              <a href="#" className="hover:text-emerald-400 transition-colors">利用規約</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">プライバシーポリシー</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">運営会社</a>
-              <a href="#" className="hover:text-emerald-400 transition-colors">お問い合わせ</a>
+            <div class="mt-8 text-center md:text-left text-sm text-slate-500">
+                &copy; <script>document.write(new Date().getFullYear())</script> PokeOda Inc. All rights reserved.
             </div>
-          </div>
-          <div className="mt-8 text-center md:text-left text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} PokeOda Inc. All rights reserved.
-          </div>
         </div>
-      </footer>
-    </div>
-  );
-};
+    </footer>
 
-export default App;
+    <!-- Lucide Icons の初期化 -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
