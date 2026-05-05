@@ -41,11 +41,19 @@
     </nav>
 
     <!-- ヒーローセクション -->
-    <section class="relative overflow-hidden bg-white">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
-        <!-- エメラルドグリーンの装飾 -->
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-emerald-100 rounded-full blur-3xl opacity-50"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-rose-100 rounded-full blur-3xl opacity-50"></div>
+    <section class="relative overflow-hidden">
+        <!-- 背景画像とぼかしレイヤー -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+            <!-- 板張り・大きな窓・外の緑を感じる清潔感のある画像をプレースホルダーとして使用 -->
+            <div class="absolute inset-0 bg-[url('images/img_1.png')] bg-cover bg-center transform scale-105 filter blur-sm"></div>
+            <!-- 文字の視認性を保ち、エメラルドグリーンに馴染ませるための半透明オーバーレイ -->
+            <div class="absolute inset-0 bg-white/70"></div>
+            <div class="absolute inset-0 bg-emerald-50/40"></div>
+        </div>
+
+        <!-- アクセントの光の装飾 -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-emerald-300 rounded-full blur-3xl opacity-30 z-0"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-72 h-72 bg-rose-200 rounded-full blur-3xl opacity-30 z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-24 relative z-10">
             <div class="lg:grid lg:grid-cols-12 lg:gap-16 items-center">
