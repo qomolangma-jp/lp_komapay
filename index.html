@@ -57,7 +57,7 @@
         <!-- 背景画像とぼかしレイヤー -->
         <div class="absolute inset-0 z-0 overflow-hidden">
             <!-- 板張り・大きな窓・外の緑を感じる清潔感のある画像をプレースホルダーとして使用 -->
-            <div class="absolute inset-0 bg-[url('images/img_2_sm.png')] sm:bg-[url('images/img_2.png')] bg-cover bg-center transform scale-105 filter blur-sm"></div>
+            <div class="absolute inset-0 bg-[url('images/img_2_sm.png')] sm:bg-[url('images/img_2.png')] bg-cover bg-center transform scale-105 filter blur-[2px]"></div>
             <!-- 文字の視認性を保ち、エメラルドグリーンに馴染ませるための半透明オーバーレイ -->
             <div class="absolute inset-0 bg-white/35"></div>
             <div class="absolute inset-0 bg-emerald-50/10"></div>
@@ -78,7 +78,7 @@
                         <span class="block mb-2"><span class="bg-yellow-200 text-yellow-950 px-1">目に入った瞬間、</span></span>
                         <span class="block"><span class="bg-yellow-200 text-yellow-950 px-1">使える。</span></span>
                     </h1>
-                    <p class="mt-4 text-lg sm:text-xl text-slate-700 mb-8 leading-relaxed font-semibold">
+                   <p class="mt-4 max-w-xl text-lg sm:text-xl text-slate-700 mb-8 leading-relaxed font-semibold">
                         高校生の毎日に寄り添う、圧倒的に使いやすくて効率的な<br class="block sm:hidden">モバイルオーダーシステム。<br class="block sm:hidden">並ぶ時間をゼロにして、友達との時間をもっと増やそう。
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -148,7 +148,7 @@
     </section>
 
     <!-- ユーザー側のメリット -->
-    <section id="features-student" class="py-24 bg-sky-50">
+    <section id="features-student" class="py-28 bg-sky-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 bg-sky-50 rounded-2xl py-6 px-4">
                 <h2 class="text-emerald-500 font-bold tracking-wide uppercase text-sm mb-3">For Students</h2>
@@ -157,9 +157,9 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-3 gap-10">
                 <!-- ポイント1 -->
-                <div class="bg-white rounded-2xl p-8
+                <div class="bg-white rounded-3xl p-8
             shadow-md
             border border-slate-100
             hover:shadow-xl
@@ -176,7 +176,7 @@
                 </div>
 
                 <!-- ポイント2 -->
-               <div class="bg-white rounded-2xl p-8
+               <div class="bg-white rounded-3xl p-8
             shadow-md
             border border-slate-100
             hover:shadow-xl
@@ -193,7 +193,7 @@
                 </div>
 
                 <!-- ポイント3 -->
-               <div class="bg-white rounded-2xl p-8
+               <div class="bg-white rounded-3xl p-8
             shadow-md
             border border-slate-100
             hover:shadow-xl
@@ -213,7 +213,7 @@
     </section>
 
     <!-- 店舗側のメリット -->
-    <section id="features-store" class="py-24 bg-emerald-900 text-white overflow-hidden relative">
+    <section id="features-store" class="py-28 bg-emerald-900 text-white overflow-hidden relative">
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
             <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
             <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full border-[20px] border-emerald-400"></div>
@@ -232,8 +232,8 @@
 
             <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
                 
-                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
-                    <div class="w-16 h-16 shrink-0 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-3xl backdrop-blur-sm border border-emerald-700">
+                    <div class="w-16 h-16 shrink-0 bg-emerald-500 rounded-3xl flex items-center justify-center text-white shadow-lg">
                         <i data-lucide="bar-chart-3" class="w-8 h-8"></i>
                     </div>
                     <div>
@@ -252,8 +252,8 @@
                     </div>
                 </div>
 
-                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-2xl backdrop-blur-sm border border-emerald-700">
-                    <div class="w-16 h-16 shrink-0 bg-rose-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                <div class="flex gap-6 items-start bg-emerald-800/50 p-8 rounded-3xl backdrop-blur-sm border border-emerald-700">
+                    <div class="w-16 h-16 shrink-0 bg-rose-500 rounded-3xl flex items-center justify-center text-white shadow-lg">
                         <i data-lucide="shield-alert" class="w-8 h-8"></i>
                     </div>
                     <div>
@@ -298,7 +298,7 @@
     </section>
 
     <!-- フッター -->
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="flex items-center">
